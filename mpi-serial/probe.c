@@ -7,7 +7,7 @@ static int mpi_match_send(void *r, void *tag)
 	  *((int *)tag) == ((Req *)r)->tag );
 }
 
-FC_FUNC(mpi_iprobe, MPI_IPROBE)(int * source, int * tag, int * comm,
+void FC_FUNC(mpi_iprobe, MPI_IPROBE)(int * source, int * tag, int * comm,
                                   int * flag, int *status, int * ierr)
 {
   *ierr = MPI_Iprobe(*source, *tag, *comm, flag, mpi_c_status(status));
@@ -62,7 +62,7 @@ int MPI_Iprobe(int source, int tag, MPI_Comm comm, int *flag,
 //probe:  wait for message, and return status
 // (either message will immediately be available, or deadlock.
 
-FC_FUNC(mpi_probe,MPI_PROBE)(int *source, int *tag, int *comm, int *status,
+void FC_FUNC(mpi_probe,MPI_PROBE)(int *source, int *tag, int *comm, int *status,
 			     int *ierr)
 {
   *ierr=MPI_Probe(*source,*tag,*comm,mpi_c_status(status));

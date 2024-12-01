@@ -8,7 +8,7 @@
 #include "mpiP.h"
 
 
-FC_FUNC( mpi_get_count , MPI_GET_COUNT )
+void FC_FUNC( mpi_get_count , MPI_GET_COUNT )
 	 (int *status, int *datatype, int *count, int *ierr)
 {
   *ierr = MPI_Get_count((MPI_Status *)status, *datatype, count);
@@ -24,7 +24,7 @@ int MPI_Get_count(MPI_Status *status, MPI_Datatype datatype, int *count)
 /********/
 
 
-FC_FUNC( mpi_get_elements , MPI_GET_ELEMENTS )
+void FC_FUNC( mpi_get_elements , MPI_GET_ELEMENTS )
 	 (MPI_Status *status, int *datatype, int *count, int *ierr)
 {
   *ierr = MPI_Get_elements(status, *datatype, count);

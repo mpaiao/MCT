@@ -5,7 +5,7 @@
 /*********/
 
 
-FC_FUNC( mpi_group_incl, MPI_GROUP_INCL )
+void FC_FUNC( mpi_group_incl, MPI_GROUP_INCL )
      (int *group, int *n, int *ranks, int *newgroup, int *ierror)
 {
   *ierror= MPI_Group_incl(*group, *n, ranks, newgroup);
@@ -46,7 +46,7 @@ int MPI_Group_incl(MPI_Group group, int n, int *ranks, MPI_Group *newgroup)
  */
 
 
-FC_FUNC( mpi_group_range_incl, MPI_GROUP_RANGE_INCL )
+void FC_FUNC( mpi_group_range_incl, MPI_GROUP_RANGE_INCL )
      (int *group, int *n, int ranges[][3], int *newgroup, int *ierror)
 {
   *ierror= MPI_Group_range_incl(*group, *n, ranges, newgroup);
@@ -84,7 +84,7 @@ int MPI_Group_range_incl(MPI_Group group, int n, int ranges[][3],
 
 
 
-FC_FUNC( mpi_group_union, MPI_GROUP_UNION )
+void FC_FUNC( mpi_group_union, MPI_GROUP_UNION )
      (int *group1, int *group2, int *newgroup, int *ierror)
 {
   *ierror= MPI_Group_union(*group1,*group2,newgroup);
@@ -114,7 +114,7 @@ int MPI_Group_union(MPI_Group group1, MPI_Group group2, MPI_Group *newgroup)
 
 
 
-FC_FUNC( mpi_group_intersection, MPI_GROUP_INTERSECTION )
+void FC_FUNC( mpi_group_intersection, MPI_GROUP_INTERSECTION )
      (int *group1, int *group2, int *newgroup, int *ierror)
 {
   *ierror= MPI_Group_intersection(*group1,*group2,newgroup);
@@ -146,7 +146,7 @@ int MPI_Group_intersection(MPI_Group group1, MPI_Group group2,
 
 
 
-FC_FUNC( mpi_group_difference, MPI_GROUP_DIFFERENCE )
+void FC_FUNC( mpi_group_difference, MPI_GROUP_DIFFERENCE )
      (int *group1, int *group2, int *newgroup, int *ierror)
 {
   *ierror= MPI_Group_difference(*group1,*group2,newgroup);
@@ -177,7 +177,7 @@ int MPI_Group_difference(MPI_Group group1, MPI_Group group2,
 /*********/
 
 
-FC_FUNC( mpi_group_free, MPI_GROUP_FREE )(int *group, int *ierror)
+void FC_FUNC( mpi_group_free, MPI_GROUP_FREE )(int *group, int *ierror)
 {
   *ierror= MPI_Group_free(group);
 }
@@ -195,7 +195,7 @@ int MPI_Group_free(MPI_Group *group)
 
 
 
-FC_FUNC( mpi_group_translate_ranks, MPI_GROUP_TRANSLATE_RANKS )
+void FC_FUNC( mpi_group_translate_ranks, MPI_GROUP_TRANSLATE_RANKS )
      ( int *group1, int *n, int *ranks1,
        int *group2, int *ranks2, int *ierror)
 {

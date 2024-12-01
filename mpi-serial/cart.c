@@ -7,7 +7,7 @@
  */
 
 
-FC_FUNC( mpi_cart_create , MPI_CART_CREATE )
+void FC_FUNC( mpi_cart_create , MPI_CART_CREATE )
 	 ( int *comm_old, int *ndims, int *dims, int *periods,
            int *reorder, int *comm_cart, int *ierr)
 {
@@ -44,7 +44,7 @@ int MPI_Cart_create( MPI_Comm comm_old, int ndims, int *dims, int *periods,
  */
 
 
-FC_FUNC( mpi_cart_get , MPI_CART_GET )
+void FC_FUNC( mpi_cart_get , MPI_CART_GET )
          (int * comm, int * maxdims, int * dims,
           int * periods, int * coords, int * ierr)
 {
@@ -73,7 +73,7 @@ int MPI_Cart_get(MPI_Comm comm, int maxdims, int *dims,
  */
 
 
-FC_FUNC( mpi_cart_coords , MPI_CART_COORDS)
+void FC_FUNC( mpi_cart_coords , MPI_CART_COORDS)
          (int *comm, int *rank, int *maxdims, int *coords, int *ierr)
 {
   *ierr = MPI_Cart_coords(*comm, *rank, *maxdims, coords);
@@ -104,7 +104,7 @@ int MPI_Cart_coords(MPI_Comm comm, int rank, int maxdims, int *coords)
  * node only, every dimension must be "1" or it is erroneous
  */
 
-FC_FUNC( mpi_dims_create , MPI_DIMS_CREATE )
+void FC_FUNC( mpi_dims_create , MPI_DIMS_CREATE )
          (int *nnodes, int *ndims, int * dims, int *ierr)
 {
   *ierr = MPI_Dims_create(*nnodes, *ndims, dims);

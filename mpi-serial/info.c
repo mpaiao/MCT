@@ -6,7 +6,7 @@
 /***/
 
 
-FC_FUNC( mpi_info_create , MPI_INFO_CREATE ) (int *info, int *ierror)
+void FC_FUNC( mpi_info_create , MPI_INFO_CREATE ) (int *info, int *ierror)
 {
   *ierror=MPI_Info_create(info);
 }
@@ -24,7 +24,7 @@ int MPI_Info_create(MPI_Info *info)
 /***/
 
 
-FC_FUNC( mpi_info_set , MPI_INFO_SET ) (int *info, char *key, char *value, int *ierror)
+void FC_FUNC( mpi_info_set , MPI_INFO_SET ) (int *info, char *key, char *value, int *ierror)
 {
   *ierror=MPI_Info_set(*info, key, value);
 }
@@ -38,7 +38,7 @@ int MPI_Info_set(MPI_Info info, char *key, char *value)
 
 /***/
 
-FC_FUNC( mpi_info_free , MPI_INFO_FREE ) (int *info, int *ierror)
+void FC_FUNC( mpi_info_free , MPI_INFO_FREE ) (int *info, int *ierror)
 {
   *ierror=MPI_Info_free(info);
 }

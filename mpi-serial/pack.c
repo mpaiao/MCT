@@ -9,7 +9,7 @@
  */
 
 
-FC_FUNC( mpi_pack , MPI_PACK )
+void FC_FUNC( mpi_pack , MPI_PACK )
      ( void *inbuf, int *incount, int *datatype,
        void *outbuf, int *outsize, int *position, int *comm, int *ierror)
 {
@@ -57,7 +57,7 @@ int Pack(void *inbuf, int incount, Datatype type,
   }
 }
 
-FC_FUNC( mpi_pack_size, MPI_PACK_SIZE )(int * incount, int * datatype,
+void FC_FUNC( mpi_pack_size, MPI_PACK_SIZE )(int * incount, int * datatype,
                                           int * comm, long * size, int *ierr)
 {
   *ierr = MPI_Pack_size(*incount, *datatype, *comm, size);
@@ -96,7 +96,7 @@ int Pack_size(int incount, Datatype datatype,
  */
 
 
-FC_FUNC( mpi_unpack , MPI_UNPACK )
+void FC_FUNC( mpi_unpack , MPI_UNPACK )
      ( void *inbuf, int *insize, int *position,
        void *outbuf, int *outcount, int *datatype,
        int *comm, int *ierror )

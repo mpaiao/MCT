@@ -22,7 +22,7 @@ static int mpi_match_recv(void *r, void *tag)
 
 
 
-FC_FUNC( mpi_isend , MPI_ISEND )(void *buf, int *count, int *datatype,
+void FC_FUNC( mpi_isend , MPI_ISEND )(void *buf, int *count, int *datatype,
    int *dest, int *tag, int *comm, int *req, int *ierror)
 {
 
@@ -100,7 +100,7 @@ int MPI_Isend(void *buf, int count, MPI_Datatype datatype,
 /*********/
 
 
-FC_FUNC(mpi_send, MPI_SEND) ( void *buf, int *count, int *datatype,
+void FC_FUNC(mpi_send, MPI_SEND) ( void *buf, int *count, int *datatype,
  		                int *dest, int *tag, int *comm, int *ierror)
 {
   *ierror=MPI_Send(buf, *count, *datatype, *dest, *tag, *comm);
@@ -132,7 +132,7 @@ int MPI_Send(void* buf, int count, MPI_Datatype datatype,
 /*********/
 
 
-FC_FUNC(mpi_ssend, MPI_SSEND) ( void *buf, int *count, int *datatype,
+void FC_FUNC(mpi_ssend, MPI_SSEND) ( void *buf, int *count, int *datatype,
                                   int *dest, int *tag, int *comm, int *ierror)
 {
   *ierror=MPI_Send(buf, *count, *datatype, *dest, *tag, *comm);
@@ -151,7 +151,7 @@ int MPI_Ssend(void* buf, int count, MPI_Datatype datatype,
 /*********/
 
 
-FC_FUNC(mpi_rsend, MPI_RSEND) ( void *buf, int *count, int *datatype,
+void FC_FUNC(mpi_rsend, MPI_RSEND) ( void *buf, int *count, int *datatype,
                                   int *dest, int *tag, int *comm, int *ierror)
 {
   *ierror=MPI_Send(buf, *count, *datatype, *dest, *tag, *comm);
@@ -172,7 +172,7 @@ int MPI_Rsend(void* buf, int count, MPI_Datatype datatype,
 
 
 
-FC_FUNC( mpi_irsend , MPI_IRSEND )(void *buf, int *count, int *datatype,
+void FC_FUNC( mpi_irsend , MPI_IRSEND )(void *buf, int *count, int *datatype,
    int *dest, int *tag, int *comm, int *req, int *ierror)
 {
 
@@ -215,7 +215,7 @@ int MPI_Irsend(void *buf, int count, MPI_Datatype datatype,
 /*********/
 
 
-FC_FUNC(mpi_sendrecv, MPI_SENDRECV) (
+void FC_FUNC(mpi_sendrecv, MPI_SENDRECV) (
      void *sendbuf, int *sendcount, int *sendtype, int *dest, int *sendtag,
      void *recvbuf, int *recvcount, int *recvtype, int *source, int *recvtag,
      int *comm, int *status,
