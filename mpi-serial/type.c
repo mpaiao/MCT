@@ -697,7 +697,7 @@ void FC_FUNC( mpi_address, MPI_ADDRESS )(void * loc, long * address, int * ierr)
   *ierr = FGet_address(loc, address);
 }
 
-int FGet_address(void * loc, long * address, int * ierr)
+int FGet_address(void * loc, long * address)
 {
   *address = (long) loc;
   return MPI_SUCCESS;
